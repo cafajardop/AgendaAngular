@@ -1,0 +1,23 @@
+<h1 class="animated fadeIn">Usuarios Registrados</h1>
+<hr>
+
+<div class="row m-5">
+    <div class="col">
+        <table class="table text-dark">
+            <thead>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Direccion</th>                
+                <th>Telefono</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usu of users">
+                    <td>{{usu.Nombres}}</td>
+                    <td>{{usu.Apellidos}}</td>
+                    <td>{{usu.Direccion}}</td>
+                    <td>{{usu.Telefono}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
