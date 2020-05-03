@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { AgendaUsuariosComponent } from './components/agenda-usuarios/agenda-usuarios.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AgendaUsuariosComponent } from './components/agenda-usuarios/agenda-usu
     AgendaComponent,
     NavbarComponent,
     HomeComponent,
-    AgendaUsuariosComponent
+    AgendaUsuariosComponent,
+    FooterComponent
     
   ],
   imports: [
