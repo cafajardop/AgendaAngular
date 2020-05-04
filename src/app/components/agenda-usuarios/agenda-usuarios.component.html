@@ -13,21 +13,22 @@
                 <th>Borrar</th>
             </thead>
             <tbody>
-                <tr *ngFor="let usu of users">
+                <tr *ngFor="let usu of users; let i = index" >
                     <td>{{usu.Nombres}}</td>
                     <td>{{usu.Apellidos}}</td>
                     <td>{{usu.Direccion}}</td>
                     <td>{{usu.Telefono}}</td>
                     <td>
-                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                        <button (click)="capturar(usu.NumDocumento)" type="submit" data-toggle="modal" class="btn btn-success waves-effect waves-light m-r-10" data-target="#myModal">
                             <i class="fa fa-edit"></i>
                           </button>
                     </td>
                     <td>
-                        <button type="submit" class="btn btn-danger waves-effect waves-light m-r-10">
+                        <button (click)="borrarUsuaruio(usu.NumDocumento)" type="submit" class="btn btn-danger waves-effect waves-light m-r-10">
                             <i class="fa fa-trash"></i>
                           </button>
                     </td>
+                    <app-modal [iduser]="verSeleccion" ></app-modal>
                 </tr>
             </tbody>
         </table>

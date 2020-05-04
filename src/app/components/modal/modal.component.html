@@ -1,0 +1,55 @@
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Actualizar Usuario</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <tr>
+                                <td>Documento</td>
+                                <td>  <label [(ngModel)] = "userUpdate.NumDocumento" #buscarTexto name="NumDoc" ngDefaultControl  class="form-control">{{iduser}}</label> </td>
+                            </tr>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>
+                                    <input [(ngModel)] = "userUpdate.Nombres" placeholder="New Name" class="form-control" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Apellido</td>
+                                <td>
+                                    <input [(ngModel)] = "userUpdate.Apellidos" placeholder="New Last Name" class="form-control" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Direccion</td>
+                                <td>
+                                    <input [(ngModel)] = "userUpdate.Direccion" placeholder="New Address" class="form-control" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Telefono</td>
+                                <td>
+                                    <input [(ngModel)] = "userUpdate.Telefono" placeholder="New Phone" class="form-control" required>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)= "actualizarUsuario()" type="button" class="btn btn-outline-success">
+                    Actualizar
+                  </button>
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

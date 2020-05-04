@@ -33,4 +33,16 @@ export class AgendaService {
     return this.http.get(url);
   }
 
+  actualizarUsuario(user: Users){
+    let url = URL_SERVICIOS + '/Users/UpdUsers';
+    console.log(user);
+    return this.http.put(url,user);
+  }
+
+  borrarUsuario(id:string){
+    let url = URL_SERVICIOS + '/Users/DelUsers?id=' + id;
+    console.log(url);
+    return this.http.delete(url);
+  }
+
 }

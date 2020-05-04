@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AgendaUsuariosComponent } from './components/agenda-usuarios/agenda-usuarios.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     HomeComponent,
     AgendaUsuariosComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent
     
   ],
   imports: [

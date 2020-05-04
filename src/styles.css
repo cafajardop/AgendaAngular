@@ -46,3 +46,7 @@ body{
     .img-logo{
       width: 120px;
     }
+
+    .oculto{
+      display:none;
+  }
