@@ -28,7 +28,7 @@
                     <td>{{usu.Direccion}}</td>
                     <td>{{usu.Telefono}}</td>
                     <td>
-                        <button (click)="capturar(usu.NumDocumento)" type="submit" data-toggle="modal" class="btn btn-success waves-effect waves-light m-r-10" data-target="#myModal">
+                        <button (click)="capturar(usu.NumDocumento,usu.Nombres,usu.Apellidos, usu.Direccion,usu.Telefono)" type="submit" data-toggle="modal" class="btn btn-success waves-effect waves-light m-r-10" data-target="#myModal">
                             <i class="fa fa-edit"></i>
                           </button>
                     </td>
@@ -37,7 +37,7 @@
                             <i class="fa fa-trash"></i>
                           </button>
                     </td>
-                    <app-modal [iduser]="verSeleccion" ></app-modal>
+                    <app-modal [iduser]="verSeleccion" [name]="nombres" [lastName]="apellidos" [adress]="direccion" [phone]="telefono" ></app-modal>
                 </tr>
             </tbody>
         </table>

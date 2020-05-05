@@ -14,6 +14,10 @@ export class ModalComponent implements OnInit {
   document: string;
   oculto: string = 'oculto';
   @Input() iduser: string;
+  @Input() name:string;
+  @Input() lastName:string;
+  @Input() adress:string;
+  @Input() phone:string;
   @Input() idx: number;
 
   constructor(
@@ -31,12 +35,19 @@ export class ModalComponent implements OnInit {
     console.log(this.document);
   }
 
-  ocultarModal() {
-    //this.location.replaceState()
+  capturaModal() {
+    this.userUpdate.Nombres = this.name;
+    this.userUpdate.Apellidos = this.lastName;
+    this.userUpdate.Direccion = this.adress;
+    this.userUpdate.Telefono = this.phone;
   }
 
   actualizarUsuario() {
     this.userUpdate.NumDocumento = this.iduser;
+    this.userUpdate.Nombres = this.userUpdate.Nombres.toUpperCase();
+    this.userUpdate.Apellidos = this.userUpdate.Apellidos.toUpperCase();
+    this.userUpdate.Direccion = this.userUpdate.Direccion.toUpperCase();
+    
     this._agendaService
       .actualizarUsuario(this.userUpdate)
       .subscribe((usr: any) => {

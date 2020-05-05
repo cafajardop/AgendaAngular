@@ -11,6 +11,10 @@ import Swal from 'sweetalert2';
 export class AgendaUsuariosComponent implements OnInit {
   users: any[] = [];
   verSeleccion: string = '';
+  nombres: string = '';
+  apellidos: string = '';
+  direccion: string = '';
+  telefono: string = '';
   id: string = '';
 
   constructor(private _agendaService: AgendaService) {}
@@ -19,8 +23,18 @@ export class AgendaUsuariosComponent implements OnInit {
     this.cargarUsuarios();
   }
 
-  capturar(verSeleccion: string) {
+  capturar(
+    verSeleccion: string,
+    nombres: string,
+    apellidos: string,
+    direccion: string,
+    telefono: string
+  ) {
     this.verSeleccion = verSeleccion;
+    this.nombres = nombres;
+    this.apellidos = apellidos;
+    this.direccion = direccion;
+    this.telefono = telefono;
   }
 
   cargarUsuarios() {
@@ -52,9 +66,10 @@ export class AgendaUsuariosComponent implements OnInit {
             'El usuario ha sido eliminado correctamente',
             'success'
           );
-          setTimeout(function(){ location.reload(); }, 2000);
+          setTimeout(function () {
+            location.reload();
+          }, 2000);
         });
-        
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire('Cancelado', 'Su archivo es seguro :)', 'error');
       }
