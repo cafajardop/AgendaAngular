@@ -27,6 +27,12 @@ export class AgendaComponent implements OnInit {
   }
 
   insertaUsuario(f: NgForm) {
+
+    this.user.Nombres = this.user.Nombres.toUpperCase();
+    this.user.Apellidos = this.user.Apellidos.toUpperCase();
+    this.user.Direccion = this.user.Direccion.toUpperCase();
+
+
     if (this.user.TipDocumento === 0) {
       Swal.fire('Error', 'Seleccione un ID Valido', 'error');
       setTimeout(function () {
