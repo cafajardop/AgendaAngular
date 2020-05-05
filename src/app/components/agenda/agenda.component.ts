@@ -27,10 +27,21 @@ export class AgendaComponent implements OnInit {
   }
 
   insertaUsuario(f: NgForm) {
-    this._agendaService.insertarUsuario(this.user)
-    .subscribe((usr:any) => {
+    if (this.user.TipDocumento === 0) {
+      Swal.fire('Error', 'Seleccione un ID Valido', 'error');
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
+      return;
+    }
+
+    this._agendaService.insertarUsuario(this.user).subscribe((usr: any) => {
+      console.log(usr);
       Swal.fire('Usuario Creado Correctamente', usr.ID, 'success');
       f.resetForm();
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
     });
   }
 }
