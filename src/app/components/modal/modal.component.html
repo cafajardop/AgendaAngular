@@ -51,7 +51,10 @@
             <div class="modal-footer">
                 <button (click)="capturaModal()" type="button" class="btn btn-outline-info">Llenar Formulario</button>
                 <button (click)="actualizarUsuario()" type="button" class="btn btn-outline-success">
-                    <i [ngClass]="{'far fa-save':!loading, 'fas fa-spinner fa-spin':loading}"  class=""></i> Actualizar</button>
+                    <i [ngClass]="{'far fa-save':!loading, 'fas fa-spinner fa-spin':loading}"  class=""></i>
+                     <span *ngIf="!loading"> Guardar </span>
+                     <span *ngIf="loading"> Actualizando</span>
+                    </button>
                 <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
