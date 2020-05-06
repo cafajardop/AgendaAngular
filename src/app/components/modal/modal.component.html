@@ -13,30 +13,35 @@
                         <table class="table">
                             <tr>
                                 <td>Documento</td>
-                                <td>  <label [(ngModel)] = "userUpdate.NumDocumento" #buscarTexto name="NumDoc" ngDefaultControl  class="form-control">{{iduser}}</label> </td>
+                                <td> <label [(ngModel)]="userUpdate.NumDocumento" #buscarTexto name="NumDoc"
+                                        ngDefaultControl class="form-control">{{iduser}}</label> </td>
                             </tr>
                             <tr>
                                 <td>Nombre</td>
                                 <td>
-                                    <input [(ngModel)] = "userUpdate.Nombres" placeholder="New Name" class="form-control" required>
+                                    <input [(ngModel)]="userUpdate.Nombres" placeholder="New Name" class="form-control"
+                                        required>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Apellido</td>
                                 <td>
-                                    <input [(ngModel)] = "userUpdate.Apellidos" placeholder="New Last Name" class="form-control" required>
+                                    <input [(ngModel)]="userUpdate.Apellidos" placeholder="New Last Name"
+                                        class="form-control" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Direccion</td>
                                 <td>
-                                    <input [(ngModel)] = "userUpdate.Direccion" placeholder="New Address" class="form-control" required>
+                                    <input [(ngModel)]="userUpdate.Direccion" placeholder="New Address"
+                                        class="form-control" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Telefono</td>
                                 <td>
-                                    <input [(ngModel)] = "userUpdate.Telefono" placeholder="New Phone" class="form-control" required>
+                                    <input [(ngModel)]="userUpdate.Telefono" placeholder="New Phone"
+                                        class="form-control" required>
                                 </td>
                             </tr>
                         </table>
@@ -44,8 +49,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button (click)= "capturaModal()" type="button" class="btn btn-outline-info">Llenar Formulario</button>
-                <button (click)= "actualizarUsuario()" type="button" class="btn btn-outline-success">Actualizar</button>
+                <button (click)="capturaModal()" type="button" class="btn btn-outline-info">Llenar Formulario</button>
+                <button (click)="actualizarUsuario()" type="button" class="btn btn-outline-success">
+                    <i [ngClass]="{'far fa-save':!loading, 'fas fa-spinner fa-spin':loading}"  class=""></i> Actualizar</button>
                 <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>

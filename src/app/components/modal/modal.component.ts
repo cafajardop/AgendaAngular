@@ -25,6 +25,8 @@ export class ModalComponent implements OnInit {
     private router: Router,
     private location: Location
   ) {}
+  
+  loading:boolean = false;
 
   ngOnInit(): void {
     this.document;
@@ -43,7 +45,8 @@ export class ModalComponent implements OnInit {
   }
 
   actualizarUsuario() {
-
+    this.loading = true;
+    setTimeout(() => this.loading = false, 3000)
     if (this.userUpdate.Nombres === '') {
       Swal.fire('Error', 'El campo Nombre no puede ir vacio', 'error');
       return;
@@ -73,7 +76,7 @@ export class ModalComponent implements OnInit {
       .actualizarUsuario(this.userUpdate)
       .subscribe((usr: any) => {
         Swal.fire('Usuario Actualizado Correctamente', usr.ID, 'success');
-        setTimeout(function(){ location.reload(); }, 2000);
+        setTimeout(function(){ location.reload(), this.loading = false; }, 2000);
       });
   }
 
