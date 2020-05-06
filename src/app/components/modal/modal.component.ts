@@ -43,6 +43,27 @@ export class ModalComponent implements OnInit {
   }
 
   actualizarUsuario() {
+
+    if (this.userUpdate.Nombres === '') {
+      Swal.fire('Error', 'El campo Nombre no puede ir vacio', 'error');
+      return;
+    }
+
+    if (this.userUpdate.Apellidos === '') {
+      Swal.fire('Error', 'El campo Apellido no puede ir vacio', 'error');
+      return;
+    }
+
+    if (this.userUpdate.Direccion === '') {
+      Swal.fire('Error', 'El campo Direccion no puede ir vacio', 'error');
+      return;
+    }
+
+    if (this.userUpdate.Telefono === '') {
+      Swal.fire('Error', 'El campo Telefono no puede ir vacio', 'error');
+      return;
+    }
+
     this.userUpdate.NumDocumento = this.iduser;
     this.userUpdate.Nombres = this.userUpdate.Nombres.toUpperCase();
     this.userUpdate.Apellidos = this.userUpdate.Apellidos.toUpperCase();
