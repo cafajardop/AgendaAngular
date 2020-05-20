@@ -5,6 +5,10 @@ export class Users {
         public Nombres: string,
         public Apellidos: string,
         public Direccion: string,
-        public Telefono: string
-    ){}
+        public Telefono: string,
+        // public sexo: boolean
+    )
+    {
+        
+    }
 }

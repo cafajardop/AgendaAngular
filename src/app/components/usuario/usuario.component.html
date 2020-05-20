@@ -1,0 +1,92 @@
+<!-- Si existe el heroe muestre el mensaje si no muestre nombre del heroe -->
+<h1 *ngIf="usuario.nombre">Usuario <small>{{usuario.nombre}}</small></h1>
+<h1 *ngIf="!usuario.nombre">Usuario <small>Nombre del Usuario</small></h1> 
+<hr>
+
+
+<div class="row text-right">
+    <div class="col">
+        <button routerLink="/usuarios" class="btn btn-danger">
+            <i class="fa fa-arrow-left"></i>
+            regresar
+        </button>
+    </div>
+</div>
+
+<div class="row animate__fadeIn">
+    <div class="col">
+        <form autocomplete="off" (ngSubmit)="guardar(f)"
+                #f="ngForm">
+            <div class="form-group">
+                <label>Firebase ID</label>
+                <input  type="text" 
+                        class="form-control" 
+                        disabled="disabled" 
+                        [(ngModel)] = "usuario.id"
+                        name="id"
+                        placeholder="Firebase ID">
+                <small class="form-text text-muted" >Este campo es autogenerado</small>
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input  type="text" 
+                        class="form-control"
+                        [(ngModel)] = "usuario.nombre"
+                        name="nombre"
+                        placeholder="Nombre del Usuario"  
+                        required>
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input  type="text" 
+                        class="form-control"
+                        [(ngModel)] = "usuario.apellidos"
+                        name="apellido"
+                        placeholder="Apellido del Usuario"  
+                        required>
+            </div>
+            <div class="form-group">
+                <label>Direccion</label>
+                <input  type="text" 
+                        class="form-control"  
+                        [(ngModel)] = "usuario.direccion"
+                        name="direccion"
+                        placeholder="Direccion del Usuario" 
+                        required>
+            </div>
+            <div class="form-group">
+                <label>Telefono</label>
+                <input  type="text" 
+                        class="form-control"  
+                        [(ngModel)] = "usuario.telefono"
+                        name="telefono"
+                        placeholder="Telefono del Usuario" 
+                        required>
+            </div>
+            <div class="form-group">
+                <label>Sexo</label>
+                <br>
+                <button *ngIf="!usuario.sexo"
+                        (click)="usuario.sexo = true"
+                         class="btn btn-outline-success w-50" type="button">
+                    <i class="fa fa-smile-wink"></i>
+                    Femenino
+                </button>
+                <button *ngIf="usuario.sexo"
+                        (click)="usuario.sexo = false"
+                        class="btn btn-outline-danger w-50" type="button">
+                    <i class="fa fa-dizzy"></i>
+                    Masculino
+                </button>
+            </div>
+            <hr>
+            <div class="form-group text-center">
+                <button type="submit"
+                        class="btn btn-primary w-25">
+                        <i class="fa fa-save"></i>
+                        Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
